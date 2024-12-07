@@ -1,0 +1,11 @@
+
+env/
+venv/
+*.log
+
+# VS Code files
+.vscode/
+
+# Other IDE files
+.idea/
+*.swp
