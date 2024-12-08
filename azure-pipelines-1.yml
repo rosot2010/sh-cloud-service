@@ -5,14 +5,18 @@
 
 trigger:
 - main
+variables:
+  staticwebpath: './dist/html'
 
 pool:
   vmImage: 'ubuntu-latest'
+  
 
 steps:
 - checkout:  self
   submodules:  false
-    
+   
+  
 
 - script: |
     echo "Building html application"
@@ -21,9 +25,9 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-   
+    
     targetFolder: '$(build.artifactStagingDirectory)'
-
+    
 - task: PublishBuildArtifacts@1
   inputs:
     pathToPublish: '$(Build.ArtifactStagingDirectory)'
