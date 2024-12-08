@@ -8,12 +8,15 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
+  checkout:  self
+  submodules:  false
 
 steps:
-- task: UsePythonVersion@0
+- task: AzureStaticWebApp@0
   inputs:
-    versionSpec: '3.8'
-    addToPath: true
+    app_location: '/'
+    azure_static_web_apps_api_token: true
+    
 
 - script: |
     echo "Building html application"
@@ -29,5 +32,6 @@ steps:
   inputs:
     pathToPublish: '$(Build.ArtifactStagingDirectory)'
     artifactName: 'drop'
+
 
        
