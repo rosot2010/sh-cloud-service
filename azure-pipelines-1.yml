@@ -34,4 +34,4 @@ steps:
   inputs:
     repository: $(imageName)
     command: build
-    Dockerfile: app/Dockerfile   
+    Dockerfile: C:\Users\Henry\cloud-service-delivery-ca\Dockerfile   
